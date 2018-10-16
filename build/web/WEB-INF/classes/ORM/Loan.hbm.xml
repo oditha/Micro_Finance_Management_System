@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Loan" table="loan" catalog="microcredit" optimistic-lock="version">
+        <id name="idLoan" type="java.lang.Integer">
+            <column name="idLoan" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="members" class="ORM.Members" fetch="select">
+            <column name="idMembers" not-null="true" />
+        </many-to-one>
+        <property name="contractNo" type="string">
+            <column name="ContractNo" length="45" />
+        </property>
+        <property name="loanAmount" type="java.lang.Double">
+            <column name="LoanAmount" precision="22" scale="0" />
+        </property>
+        <property name="loanInterest" type="java.lang.Double">
+            <column name="LoanInterest" precision="22" scale="0" />
+        </property>
+        <property name="loanPeriod" type="java.lang.Integer">
+            <column name="LoanPeriod" />
+        </property>
+        <property name="loanInstallment" type="java.lang.Double">
+            <column name="LoanInstallment" precision="22" scale="0" />
+        </property>
+        <property name="memberfee" type="string">
+            <column name="Memberfee" length="45" />
+        </property>
+        <property name="loanIndex" type="string">
+            <column name="LoanIndex" length="45" />
+        </property>
+        <property name="repaymentDay" type="string">
+            <column name="RepaymentDay" length="45" />
+        </property>
+        <property name="loanDate" type="string">
+            <column name="LoanDate" length="45" />
+        </property>
+        <property name="status" type="string">
+            <column name="Status" length="45" />
+        </property>
+        <property name="garanter1" type="string">
+            <column name="garanter1" length="200" />
+        </property>
+        <property name="garanter2" type="string">
+            <column name="garanter2" length="200" />
+        </property>
+        <property name="isAprove" type="string">
+            <column name="IsAprove" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="45" />
+        </property>
+        <property name="createBy" type="string">
+            <column name="CreateBy" length="45" />
+        </property>
+        <property name="renewAmount" type="java.lang.Double">
+            <column name="RenewAmount" precision="22" scale="0" />
+        </property>
+        <property name="issueDate" type="string">
+            <column name="issueDate" length="20" />
+        </property>
+        <set name="repayments" table="repayment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idLoan" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Repayment" />
+        </set>
+        <set name="loancancellations" table="loancancellation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idLoan" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Loancancellation" />
+        </set>
+        <set name="legalactions" table="legalaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idLoan" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Legalaction" />
+        </set>
+    </class>
+</hibernate-mapping>

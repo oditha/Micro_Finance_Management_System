@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Repayment" table="repayment" catalog="microcredit" optimistic-lock="version">
+        <id name="idRePayment" type="java.lang.Integer">
+            <column name="idRePayment" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="loan" class="ORM.Loan" fetch="select">
+            <column name="idLoan" not-null="true" />
+        </many-to-one>
+        <property name="repaymentAmount" type="java.lang.Double">
+            <column name="RepaymentAmount" precision="22" scale="0" />
+        </property>
+        <property name="paidAmount" type="java.lang.Double">
+            <column name="PaidAmount" precision="22" scale="0" />
+        </property>
+        <property name="date" type="string">
+            <column name="Date" length="45" />
+        </property>
+        <property name="actualDay" type="string">
+            <column name="ActualDay" length="45" />
+        </property>
+        <property name="currentDay" type="string">
+            <column name="CurrentDay" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="45" />
+        </property>
+        <property name="isAproved" type="string">
+            <column name="IsAproved" length="45" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="45" />
+        </property>
+        <property name="recieptNo" type="string">
+            <column name="RecieptNo" length="45" />
+        </property>
+        <property name="arreas" type="string">
+            <column name="Arreas" />
+        </property>
+        <set name="repaymentcancellations" table="repaymentcancellation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idRePayment" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Repaymentcancellation" />
+        </set>
+    </class>
+</hibernate-mapping>

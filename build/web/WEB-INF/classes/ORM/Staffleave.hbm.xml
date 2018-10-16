@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Staffleave" table="staffleave" catalog="microcredit" optimistic-lock="version">
+        <id name="idstaffLeave" type="java.lang.Integer">
+            <column name="idstaffLeave" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="staff" class="ORM.Staff" fetch="select">
+            <column name="idStaff" not-null="true" />
+        </many-to-one>
+        <property name="startDate" type="string">
+            <column name="StartDate" length="45" />
+        </property>
+        <property name="endDate" type="string">
+            <column name="EndDate" length="45" />
+        </property>
+        <property name="leaveType" type="string">
+            <column name="LeaveType" length="45" />
+        </property>
+        <property name="isDelete" type="string">
+            <column name="isDelete" length="45" />
+        </property>
+        <property name="requestedDate" type="string">
+            <column name="RequestedDate" length="45" />
+        </property>
+        <property name="isAprove" type="string">
+            <column name="IsAprove" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="45" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="45" />
+        </property>
+        <property name="reason" type="string">
+            <column name="Reason" length="45" />
+        </property>
+        <property name="totalDays" type="string">
+            <column name="TotalDays" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

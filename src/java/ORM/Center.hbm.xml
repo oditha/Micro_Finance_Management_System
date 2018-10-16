@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Center" table="center" catalog="microcredit" optimistic-lock="version">
+        <id name="idCenter" type="java.lang.Integer">
+            <column name="idCenter" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="branch" class="ORM.Branch" fetch="select">
+            <column name="idBranch" not-null="true" />
+        </many-to-one>
+        <property name="centerName" type="string">
+            <column name="CenterName" length="45" />
+        </property>
+        <property name="centerDay" type="string">
+            <column name="CenterDay" length="45" />
+        </property>
+        <property name="centertime" type="string">
+            <column name="Centertime" length="45" />
+        </property>
+        <property name="isApprove" type="string">
+            <column name="IsApprove" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="10" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="45" />
+        </property>
+        <property name="centerNo" type="string">
+            <column name="CenterNO" length="5" />
+        </property>
+        <set name="centerHasStaffs" table="center_has_staff" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idCenter" not-null="true" />
+            </key>
+            <one-to-many class="ORM.CenterHasStaff" />
+        </set>
+        <set name="memberses" table="members" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idCenter" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Members" />
+        </set>
+    </class>
+</hibernate-mapping>

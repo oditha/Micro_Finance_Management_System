@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.CenterHasStaff" table="center_has_staff" catalog="microcredit" optimistic-lock="version">
+        <id name="idcenterHasStaff" type="java.lang.Integer">
+            <column name="IDCenter_has_Staff" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="center" class="ORM.Center" fetch="select">
+            <column name="idCenter" not-null="true" />
+        </many-to-one>
+        <many-to-one name="staff" class="ORM.Staff" fetch="select">
+            <column name="idStaff" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

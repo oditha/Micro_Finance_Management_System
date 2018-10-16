@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Denimation" table="denimation" catalog="microcredit" optimistic-lock="version">
+        <id name="idDenimation" type="java.lang.Integer">
+            <column name="idDenimation" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="staff" class="ORM.Staff" fetch="select">
+            <column name="idStaff" />
+        </many-to-one>
+        <property name="date" type="string">
+            <column name="Date" length="45" />
+        </property>
+        <property name="exchangeCash" type="java.lang.Double">
+            <column name="ExchangeCash" precision="22" scale="0" />
+        </property>
+        <property name="centerCollection" type="java.lang.Double">
+            <column name="CenterCollection" precision="22" scale="0" />
+        </property>
+        <property name="npcollection" type="java.lang.Double">
+            <column name="NPCollection" precision="22" scale="0" />
+        </property>
+        <property name="memberFee" type="java.lang.Double">
+            <column name="MemberFee" precision="22" scale="0" />
+        </property>
+        <property name="incomeAmount" type="java.lang.Double">
+            <column name="IncomeAmount" precision="22" scale="0" />
+        </property>
+        <property name="totalLoanAmount" type="java.lang.Double">
+            <column name="TotalLoanAmount" precision="22" scale="0" />
+        </property>
+        <property name="expences" type="java.lang.Double">
+            <column name="Expences" precision="22" scale="0" />
+        </property>
+        <property name="totalBalance" type="java.lang.Double">
+            <column name="TotalBalance" precision="22" scale="0" />
+        </property>
+        <property name="short_" type="java.lang.Double">
+            <column name="Short" precision="22" scale="0" />
+        </property>
+        <property name="extras" type="java.lang.Double">
+            <column name="Extras" precision="22" scale="0" />
+        </property>
+        <property name="shortAndExtraBalance" type="java.lang.Double">
+            <column name="ShortAndExtraBalance" precision="22" scale="0" />
+        </property>
+        <set name="denimationcahs" table="denimationcah" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idDenimation" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Denimationcah" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Branch" table="branch" catalog="microcredit" optimistic-lock="version">
+        <id name="idBranch" type="java.lang.Integer">
+            <column name="idBranch" />
+            <generator class="identity" />
+        </id>
+        <property name="branchNo" type="string">
+            <column name="BranchNo" length="45" />
+        </property>
+        <property name="branchName" type="string">
+            <column name="BranchName" length="45" />
+        </property>
+        <property name="address1" type="string">
+            <column name="Address1" length="45" />
+        </property>
+        <property name="address2" type="string">
+            <column name="Address2" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="City" length="45" />
+        </property>
+        <property name="contact1" type="string">
+            <column name="Contact1" length="45" />
+        </property>
+        <property name="contact2" type="string">
+            <column name="Contact2" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="10" />
+        </property>
+        <set name="centers" table="center" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idBranch" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Center" />
+        </set>
+    </class>
+</hibernate-mapping>

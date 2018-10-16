@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Staff" table="staff" catalog="microcredit" optimistic-lock="version">
+        <id name="idStaff" type="java.lang.Integer">
+            <column name="idStaff" />
+            <generator class="identity" />
+        </id>
+        <property name="nic" type="string">
+            <column name="Nic" length="45" />
+        </property>
+        <property name="licenceNo" type="string">
+            <column name="LicenceNo" length="45" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="address1" type="string">
+            <column name="Address1" length="45" />
+        </property>
+        <property name="address2" type="string">
+            <column name="Address2" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="contact1" type="string">
+            <column name="Contact1" length="45" />
+        </property>
+        <property name="contact2" type="string">
+            <column name="contact2" length="45" />
+        </property>
+        <property name="basicSalary" type="string">
+            <column name="`Basic Salary`" length="45" />
+        </property>
+        <property name="etfNo" type="string">
+            <column name="EtfNo" length="45" />
+        </property>
+        <property name="epfNo" type="string">
+            <column name="EpfNo" length="45" />
+        </property>
+        <property name="dob" type="string">
+            <column name="DOB" length="45" />
+        </property>
+        <property name="joiningDate" type="string">
+            <column name="joiningDate" length="45" />
+        </property>
+        <property name="position" type="string">
+            <column name="Position" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="45" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="Createdby" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="100" />
+        </property>
+        <property name="gender" type="string">
+            <column name="Gender" length="45" />
+        </property>
+        <property name="photo" type="string">
+            <column name="Photo" length="45" />
+        </property>
+        <property name="nameWithinitials" type="string">
+            <column name="NameWithinitials" length="45" />
+        </property>
+        <set name="staffHasDeductionses" table="staff_has_deductions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.StaffHasDeductions" />
+        </set>
+        <set name="staffattedences" table="staffattedence" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Staffattedence" />
+        </set>
+        <set name="logins" table="login" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Login" />
+        </set>
+        <set name="centerHasStaffs" table="center_has_staff" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.CenterHasStaff" />
+        </set>
+        <set name="resignations" table="resignation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Resignation" />
+        </set>
+        <set name="staffsalaries" table="staffsalary" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Staffsalary" />
+        </set>
+        <set name="staffHasAllowances" table="staff_has_allowance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.StaffHasAllowance" />
+        </set>
+        <set name="denimations" table="denimation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" />
+            </key>
+            <one-to-many class="ORM.Denimation" />
+        </set>
+        <set name="staffleaves" table="staffleave" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idStaff" not-null="true" />
+            </key>
+            <one-to-many class="ORM.Staffleave" />
+        </set>
+    </class>
+</hibernate-mapping>

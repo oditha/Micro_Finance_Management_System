@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Denimationcah" table="denimationcah" catalog="microcredit" optimistic-lock="version">
+        <id name="idDenimationCah" type="java.lang.Integer">
+            <column name="idDenimationCah" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="denimation" class="ORM.Denimation" fetch="select">
+            <column name="idDenimation" not-null="true" />
+        </many-to-one>
+        <property name="n5000" type="java.lang.Integer">
+            <column name="N5000" />
+        </property>
+        <property name="n2000" type="java.lang.Integer">
+            <column name="N2000" />
+        </property>
+        <property name="n1000" type="java.lang.Integer">
+            <column name="N1000" />
+        </property>
+        <property name="n500" type="java.lang.Integer">
+            <column name="N500" />
+        </property>
+        <property name="n100" type="java.lang.Integer">
+            <column name="N100" />
+        </property>
+        <property name="n50" type="java.lang.Integer">
+            <column name="N50" />
+        </property>
+        <property name="n20" type="java.lang.Integer">
+            <column name="N20" />
+        </property>
+        <property name="n10" type="java.lang.Integer">
+            <column name="N10" />
+        </property>
+        <property name="coins" type="java.lang.Double">
+            <column name="Coins" precision="22" scale="0" />
+        </property>
+        <property name="total" type="java.lang.Double">
+            <column name="Total" precision="22" scale="0" />
+        </property>
+        <property name="slipNo" type="string">
+            <column name="SlipNo" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

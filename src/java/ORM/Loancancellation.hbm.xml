@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Loancancellation" table="loancancellation" catalog="microcredit" optimistic-lock="version">
+        <id name="idLoanCancellation" type="java.lang.Integer">
+            <column name="idLoanCancellation" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="loan" class="ORM.Loan" fetch="select">
+            <column name="idLoan" not-null="true" />
+        </many-to-one>
+        <property name="date" type="string">
+            <column name="Date" length="45" />
+        </property>
+        <property name="reason" type="string">
+            <column name="Reason" length="45" />
+        </property>
+        <property name="isAproved" type="string">
+            <column name="IsAproved" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="45" />
+        </property>
+        <property name="creaedBy" type="string">
+            <column name="CreaedBy" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

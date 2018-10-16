@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MCRepaymentSheet" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="28" bottomMargin="20" uuid="b60f29e4-a781-4436-bbe5-ae9c1e60fa3e">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="b90fa975-9a6f-4e42-a9e4-cbb8621b876a">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="memno" class="java.lang.String"/>
+		<field name="memname" class="java.lang.String"/>
+		<field name="nic" class="java.lang.String"/>
+		<field name="contractno" class="java.lang.String"/>
+		<field name="loan" class="java.lang.String"/>
+		<field name="installment" class="java.lang.String"/>
+		<field name="index" class="java.lang.String"/>
+		<field name="fee" class="java.lang.String"/>
+		<field name="totalloan" class="java.lang.String"/>
+		<field name="totalfee" class="java.lang.String"/>
+		<field name="center" class="java.lang.String"/>
+		<field name="contact" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="Bean" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="executive" class="java.lang.String"/>
+	<variable name="cmclogo" class="java.lang.String">
+		<variableExpression><![CDATA["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"]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="480" height="30" uuid="065ca22e-2598-4fcd-83d4-e6b30673a941"/>
+				<textElement textAlignment="Left">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Canto Micro Commercial Investment (PVT) Ltd
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="480" height="20" uuid="26b8c78f-1928-464f-bcb9-b9e7bbe07fa3"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disbursement Sheet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="80" height="20" uuid="3c47efa4-07aa-4d66-b385-1e8d7d497028"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Executive :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="77" width="799" height="1" uuid="5b51e3c4-6408-4e2e-bd44-53f9338bb421"/>
+			</line>
+			<textField>
+				<reportElement x="90" y="52" width="290" height="20" uuid="eb181fd7-ca1c-4759-946e-d54ca7259868"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{executive}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="59" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="2" width="800" height="54" uuid="47d6fdc2-a93c-4f17-a9f7-2f9f20fe4b85">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="c4dc81c2-6046-4716-ae73-ed3c19d08ffc">
+						<dataSourceExpression><![CDATA[$P{Bean}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="66" uuid="5f6bf1e5-95f1-4ef1-b620-852c29f22a38">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="66" height="18" uuid="12e2dae3-53af-477b-b954-f385fc8d15a8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Member No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="66" height="18" uuid="80b0f554-e13d-45ed-965a-5bffa5e30f79"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{memno}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="131" uuid="b5a5d1c6-c270-4a84-83ee-e5e2bb72bed7">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="131" height="18" uuid="1d1e5d07-1b71-4b49-b45c-d18360649414"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Member Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="131" height="18" uuid="86ec8f1c-6e0b-4370-8305-a9fefe3f6ac6"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{memname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="88" uuid="a1d4de8d-413f-407e-9dc4-7dab60594959">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="88" height="18" uuid="ba7e5774-ffe8-4b61-bce2-6a74a104d77e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[NIC]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="88" height="18" uuid="f12314d1-761e-4145-b248-5c62f267289d"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{nic}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="76" uuid="23daf5f2-b075-4a9a-9905-c14f3e7bfb5d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="76" height="18" uuid="b36ee9ae-291d-4417-873f-732b53d1fbad"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Contact No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="76" height="18" uuid="1b900a68-fcc5-4825-a4b0-50420c1b39d1"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{contact}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="66" uuid="29e68654-518d-43bf-bc81-4b225097e410">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="66" height="18" uuid="f30b5047-56f4-4f5b-b545-9e4ea7c1a9d7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Centre]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="66" height="18" uuid="5a3f8e83-59ad-41c6-bbfb-b6e16e8f7e84"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{center}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="99" uuid="cdf50d30-8fb3-47e8-b55f-a5c5e212a4c6">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="99" height="18" uuid="c549906c-3052-4acc-a067-c248c0e546d1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Contract No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="99" height="18" uuid="fefeb63b-2aec-4f9d-8602-55773d39c666"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{contractno}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="55" uuid="2b5752c8-ff11-4ed6-abcf-5b019b9727ce">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="18" uuid="d61f7579-1144-4b9f-8dd5-3059d87d05ca"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Loan Index]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="18" uuid="98fca27c-c1e0-4d6e-a657-7c3ce3cd9f1b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="55" height="18" uuid="ea43913a-a83b-44b4-9137-2d3bf8338ec6"/>
+								<box leftPadding="2"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{index}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="55" uuid="3a096060-91b6-4709-9314-6c2d6209da4a">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="18" uuid="67147cd3-1420-4592-beb2-b34b97f93b21"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Loan Amount]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="55" height="18" uuid="1fd400d1-773a-46bc-883a-b19033a4dc2a"/>
+								<box rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{totalloan}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="55" height="18" uuid="2d74ea8b-3d4e-4307-9b2b-e48e93047402"/>
+								<box rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{loan}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="55" uuid="a9093382-1289-4c20-b133-7faac432526c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="18" uuid="eb4361d9-3ea4-4241-9ac3-e333c578dead"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Installment]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="55" height="18" uuid="96fda908-1322-4fd5-8689-e6236a9ba3fe"/>
+								<box rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{installment}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="54" uuid="948975e7-8487-4afd-919c-e186708f2e9b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="54" height="18" uuid="bd16ea03-359c-4ff1-be44-d094c9f1ffe5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Fees]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="54" height="18" uuid="83218955-05f3-44e0-8b19-d946959953c0"/>
+								<box rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{totalfee}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table_TD" height="18">
+							<textField>
+								<reportElement x="0" y="0" width="54" height="18" uuid="ce30f7e8-c4d7-4949-bcdf-02075ea6e13e"/>
+								<box rightPadding="2"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{fee}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="55" uuid="a3ecae5c-3ff8-4720-ad2a-663e05a1baea">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column11"/>
+						<jr:columnHeader style="Table_CH" height="18" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="18" uuid="d96b6d78-0fd4-447f-8fc9-c71947811c50"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Signature]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="18" rowSpan="1"/>
+						<jr:detailCell style="Table_TD" height="18"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

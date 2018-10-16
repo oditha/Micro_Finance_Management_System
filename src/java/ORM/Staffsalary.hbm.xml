@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Staffsalary" table="staffsalary" catalog="microcredit" optimistic-lock="version">
+        <id name="idStaffSalary" type="java.lang.Integer">
+            <column name="idStaffSalary" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="staff" class="ORM.Staff" fetch="select">
+            <column name="idStaff" not-null="true" />
+        </many-to-one>
+        <property name="date" type="string">
+            <column name="date" length="45" />
+        </property>
+        <property name="basicSalary" type="string">
+            <column name="BasicSalary" length="45" />
+        </property>
+        <property name="totalSalary" type="string">
+            <column name="TotalSalary" length="45" />
+        </property>
+        <property name="totalAllowance" type="string">
+            <column name="TotalAllowance" length="45" />
+        </property>
+        <property name="totalDeductions" type="string">
+            <column name="totalDeductions" length="45" />
+        </property>
+        <property name="etf" type="string">
+            <column name="Etf" length="45" />
+        </property>
+        <property name="epf" type="string">
+            <column name="Epf" length="45" />
+        </property>
+        <property name="netSalary" type="string">
+            <column name="NetSalary" length="45" />
+        </property>
+        <property name="isDelete" type="string">
+            <column name="isDelete" length="45" />
+        </property>
+        <property name="totalPayments" type="string">
+            <column name="TotalPayments" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="45" />
+        </property>
+        <property name="isAprove" type="string">
+            <column name="IsAprove" length="45" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

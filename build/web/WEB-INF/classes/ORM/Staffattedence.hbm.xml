@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Staffattedence" table="staffattedence" catalog="microcredit" optimistic-lock="version">
+        <id name="idStaffAttedence" type="java.lang.Integer">
+            <column name="idStaffAttedence" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="staff" class="ORM.Staff" fetch="select">
+            <column name="idStaff" not-null="true" />
+        </many-to-one>
+        <property name="date" type="string">
+            <column name="Date" length="45" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="intime" type="string">
+            <column name="Intime" length="45" />
+        </property>
+        <property name="outtime" type="string">
+            <column name="Outtime" length="45" />
+        </property>
+        <property name="specialnote" type="string">
+            <column name="Specialnote" length="45" />
+        </property>
+        <property name="isDelete" type="string">
+            <column name="isDelete" length="45" />
+        </property>
+        <property name="isActive" type="string">
+            <column name="IsActive" length="45" />
+        </property>
+        <property name="isAprove" type="string">
+            <column name="IsAprove" length="45" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

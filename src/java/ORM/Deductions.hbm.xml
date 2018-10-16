@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 6, 2018 6:20:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ORM.Deductions" table="deductions" catalog="microcredit" optimistic-lock="version">
+        <id name="idDeductions" type="java.lang.Integer">
+            <column name="idDeductions" />
+            <generator class="identity" />
+        </id>
+        <property name="deductionType" type="string">
+            <column name="DeductionType" length="45" />
+        </property>
+        <property name="isDelete" type="string">
+            <column name="IsDelete" length="45" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="45" />
+        </property>
+        <set name="staffHasDeductionses" table="staff_has_deductions" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idDeductions" not-null="true" />
+            </key>
+            <one-to-many class="ORM.StaffHasDeductions" />
+        </set>
+    </class>
+</hibernate-mapping>
